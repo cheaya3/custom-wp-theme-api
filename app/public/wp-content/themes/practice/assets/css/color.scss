@@ -1,0 +1,20 @@
+$theme-main-color: #03a9f4;
+$theme-color-txt-color:#fff;
+$theme-txt-color:#333;
+$button-txt-color:#fff;
+
+//Wordpressに設定されているclass
+.required{
+  color: #ff0000;
+}
+
+//共通項目
+header,footer{
+  background: $theme-main-color;
+  a {
+    color: $theme-color-txt-color;
+  }
+}
+body{
+  color: $theme-txt-color;
+}

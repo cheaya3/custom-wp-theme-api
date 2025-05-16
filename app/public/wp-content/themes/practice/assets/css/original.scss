@@ -1,0 +1,108 @@
+@import 'reset';
+
+* {
+  box-sizing: border-box;
+}
+
+// 変数の定義
+// min-width
+$breakpoint-up: (
+        'sm': 'screen and (min-width: 400px)',
+        'md': 'screen and (min-width: 768px)',
+        'lg': 'screen and (min-width: 1000px)',
+        'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+// max-width
+$breakpoint-down: (
+        'sm': 'screen and (max-width: 399px)',
+        'md': 'screen and (max-width: 767px)',
+        'lg': 'screen and (max-width: 999px)',
+        'xl': 'screen and (max-width: 1199px)',
+) !default;
+
+// @mixinの定義
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-down($breakpoint: md) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
+
+@import "layout";
+@import "design";
+
+//ハンバーガーメニューの処理
+
+@include mq-down() {
+  header {
+    article {
+      display: block;
+      #g-menu {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        height: 40px;
+        width: 40px;
+        justify-content: center;
+        align-items: center;
+        z-index: 90;
+        background-color: #333;
+
+        span,span:before,span:after {
+          content: '';
+          display: block;
+          height: 3px;
+          width: 25px;
+          border-radius: 3px;
+          background-color: #ccc;
+          position: absolute;
+        }
+        span:before {
+          bottom: 8px;
+        }
+        span:after {
+          top: 8px;
+        }
+      }
+      nav {
+
+
+        &#global {
+          &.active #g-menu {
+            span{
+              background-color: rgba(255, 255, 255, 0);
+            }
+            span:before {
+              bottom: 0;
+              transform: rotate(45deg);
+            }
+            span:after {
+              top:0;
+              transform: rotate(-45deg);
+            }
+          }
+          ul{
+          display: none;
+          }
+          &.active ul {
+            display: block;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            background: #e2e2e2;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,14 @@
+.required {
+  color: #ff0000;
+}
+
+header, footer {
+  background: #03a9f4;
+}
+header a, footer a {
+  color: #fff;
+}
+
+body {
+  color: #333;
+}/*# sourceMappingURL=color.css.map */
