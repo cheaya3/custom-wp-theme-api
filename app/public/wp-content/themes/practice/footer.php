@@ -3,7 +3,7 @@
 //get_sidebar();
 
 ?>
-
+</div>
 <footer role="contentinfo">
     <div class="container">
         <div id="copyright">

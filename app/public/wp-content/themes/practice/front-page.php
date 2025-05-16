@@ -25,7 +25,7 @@
                         <div class="thumb"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/person.png"></div>
                         <div class="description">
                             <h2>PROFILE</h2>
-                            <h3>山本 華子<span>HANAKO Yamamoto</span></h3>
+                            <h3>山本 華子<span>HANAKO YAMAMOTO</span></h3>
                             <p>情に棹させば流される。智に働けば角が立つ。どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。とかくに人の世は住みにくい。意地を通せば窮屈だ。とかくに人の世は住みにくい。どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。意地を通せば窮屈だ。山</p>
                             <p><a href="#">もっと見る</a></p>
                         </div>

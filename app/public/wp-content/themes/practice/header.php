@@ -31,6 +31,7 @@
         </div>
     </div>
 </header>
+<div class="division">
 <header>
     <div class="container">
         <div class="logo"><a href="<?php echo home_url(); ?>"><h1>LOGO<br>SPACE</h1></a></div>

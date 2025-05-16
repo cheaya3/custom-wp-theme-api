@@ -271,15 +271,56 @@ header {
     }
 }
 
-/*　menu shop*/
+/* 画面幅768px以下 */
+@media (max-width: 1000px) {
+    .concept {
+        margin-top: -150px;
+        .container {
+            .wrapper {
+                .card {
+                    flex-direction: column;
+                    padding: 20px;
+                    gap:15px;
+                    .thumb {
+                        display: flex;
+                        align-items: flex-end;
+                        width: 180px;
+                        height: 180px;
+                    }
+                    .description {
+                        align-items: center;
+                        gap: 14px;
+                        h3 {
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                        p {
+                            line-height: 2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*　menu shop event e-contents*/
 .menu, .event, .shop, .e-contents {
-        .wrapper {
-            padding: 20px 0 50px 0;
+        .container {
+            .wrapper {
+                padding: 20px 0 50px 0;
+                p {
+                    margin: 0 auto;
+                  }
+            }
             p {
-                margin: 0 auto;
-              }
+                a {
+                    white-space: nowrap;
+                }
+            }
         }
 }
+
 
 /*　menu shop*/
 
@@ -321,6 +362,36 @@ header {
     }
 }
 
+/* 画面幅768px以下 */
+@media (max-width: 1000px) {
+    .shop, .menu {
+        .wrapper {
+            flex-direction: column;
+            .card {
+                width: 100%;
+                .description {
+                    p:nth-of-type(1) {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .menu {
+        .wrapper {
+            .card {
+                .description {
+                    p:nth-of-type(1) {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}
 
 /* event, e-contents */
 .event, .e-contents {
@@ -332,10 +403,11 @@ header {
             .card {
                flex-direction: row; 
                padding: 20px;
+               justify-content: flex-start;
                align-items: center;
                .thumb {
                     img {
-                        min-width: 100px;
+                        max-width: 300px;
                         aspect-ratio: 1 / 1;
                         object-fit: cover;
                         object-position: 80% center;
@@ -343,6 +415,9 @@ header {
                }
                .description {
                 gap: 20px;
+                h4 {
+                    font-weight: bold;
+                }
                 .information {
                     display: flex;
                     justify-content: space-between;
@@ -363,6 +438,28 @@ header {
                     text-align: left;
                 }
                }
+            }
+        }
+    }
+}
+
+/* 画面幅768px以下 */
+
+@media (max-width: 1000px) {
+    .event, .e-contents {
+        .container {
+            .wrapper {
+                .card {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    .thumb {
+                        width: 100%;
+                        img {
+                            min-width: 100%;
+                            height: 200px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -422,6 +519,17 @@ header {
     }
 }
 
+/* 画面幅768px以下 */
+
+@media (max-width: 1000px) {
+    .category-labels {
+        flex-wrap: wrap; 
+        span {
+            flex: 1 1 calc(50% - 10px);
+        }
+    } 
+}
+
 /* event */
 .event {
     .container {
@@ -466,6 +574,14 @@ section.bg {
     }
 }
 
+/* 画面幅768px以下 */
+
+@media (max-width: 1000px) {
+    .ng-margin {
+        margin-top: -350px;
+    }
+}
+
 /* footer */
 footer {
     background: #000;
@@ -476,59 +592,70 @@ footer {
 }
 
 /*縦メニュー*/
-.division {
-    display: flex;
-    max-width: 1024px;
-    margin: 0 auto;
-    header {
-        .container {
-            min-width: 250px;
-            flex-direction: column;
-            align-items: center;
-            gap: 50px;
-            .logo {
-                width: 100%;
-            }
-            #global {
-                align-items: flex-start;
+@media (max-width: 1000px) {
+    .division {
+        display: flex;
+        max-width: 1024px;
+        margin: 0 auto;
+        header {
+            .container {
+                min-width: 250px;
+                flex-direction: column;
+                align-items: center;
                 gap: 50px;
-                .sns {
-                    order: 3;
+                .logo {
+                    width: 100%;
+                    text-align: center;
                 }
-                ul {
-                    flex-direction: column;
+                #global {
                     align-items: flex-start;
-                    gap: 30px;
-                    li {
-                        a {
-                            padding: 0;
-                            align-items: flex-start;
-                            &::before {
-                                content: none;
+                    gap: 50px;
+                    .sns {
+                        order: 3;
+                    }
+                    ul {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 30px;
+                        li {
+                            a {
+                                padding: 0;
+                                align-items: flex-start;
+                                &::before {
+                                    content: none;
+                                }
+    
                             }
-
                         }
                     }
                 }
             }
         }
-    }
-    main {
-        flex: 1;
-        min-width: 0;
-        .concept {
-            margin-top: -300px;
-            width: 90%;
-        }
-        section {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        section.bg {
-            .container {
+        main {
+            flex: 1;
+            min-width: 0;
+            .concept {
+                margin-top: -300px;
                 width: 90%;
             }
+            section {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            section.bg {
+                .container {
+                    width: 90%;
+                }
+            }
         }
+    }
+}
+
+/* 画面幅768px以下 */
+
+@media (max-width: 1000px) {
+    .ng-margin {
+        margin-top: -350px;
     }
 }
 

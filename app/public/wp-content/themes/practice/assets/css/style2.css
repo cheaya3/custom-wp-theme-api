@@ -245,12 +245,43 @@ header .container #global ul li a span {
   font-weight: bold;
 }
 
-/*　menu shop*/
-.menu .wrapper, .event .wrapper, .shop .wrapper, .e-contents .wrapper {
+/* 画面幅768px以下 */
+@media (max-width: 1000px) {
+  .concept {
+    margin-top: -150px;
+  }
+  .concept .container .wrapper .card {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+  .concept .container .wrapper .card .thumb {
+    display: flex;
+    align-items: flex-end;
+    width: 180px;
+    height: 180px;
+  }
+  .concept .container .wrapper .card .description {
+    align-items: center;
+    gap: 14px;
+  }
+  .concept .container .wrapper .card .description h3 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .concept .container .wrapper .card .description p {
+    line-height: 2em;
+  }
+}
+/*　menu shop event e-contents*/
+.menu .container .wrapper, .event .container .wrapper, .shop .container .wrapper, .e-contents .container .wrapper {
   padding: 20px 0 50px 0;
 }
-.menu .wrapper p, .event .wrapper p, .shop .wrapper p, .e-contents .wrapper p {
+.menu .container .wrapper p, .event .container .wrapper p, .shop .container .wrapper p, .e-contents .container .wrapper p {
   margin: 0 auto;
+}
+.menu .container p a, .event .container p a, .shop .container p a, .e-contents .container p a {
+  white-space: nowrap;
 }
 
 /*　menu shop*/
@@ -289,6 +320,23 @@ header .container #global ul li a span {
   margin-top: 10px;
 }
 
+/* 画面幅768px以下 */
+@media (max-width: 1000px) {
+  .shop .wrapper, .menu .wrapper {
+    flex-direction: column;
+  }
+  .shop .wrapper .card, .menu .wrapper .card {
+    width: 100%;
+  }
+  .shop .wrapper .card .description p:nth-of-type(1), .menu .wrapper .card .description p:nth-of-type(1) {
+    margin: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .menu .wrapper .card .description p:nth-of-type(1) {
+    margin: 0 auto;
+  }
+}
 /* event, e-contents */
 .event .container .wrapper, .e-contents .container .wrapper {
   display: flex;
@@ -298,10 +346,11 @@ header .container #global ul li a span {
 .event .container .wrapper .card, .e-contents .container .wrapper .card {
   flex-direction: row;
   padding: 20px;
+  justify-content: flex-start;
   align-items: center;
 }
 .event .container .wrapper .card .thumb img, .e-contents .container .wrapper .card .thumb img {
-  min-width: 100px;
+  max-width: 300px;
   aspect-ratio: 1/1;
   -o-object-fit: cover;
      object-fit: cover;
@@ -310,6 +359,9 @@ header .container #global ul li a span {
 }
 .event .container .wrapper .card .description, .e-contents .container .wrapper .card .description {
   gap: 20px;
+}
+.event .container .wrapper .card .description h4, .e-contents .container .wrapper .card .description h4 {
+  font-weight: bold;
 }
 .event .container .wrapper .card .description .information, .e-contents .container .wrapper .card .description .information {
   display: flex;
@@ -330,6 +382,20 @@ header .container #global ul li a span {
   text-align: left;
 }
 
+/* 画面幅768px以下 */
+@media (max-width: 1000px) {
+  .event .container .wrapper .card, .e-contents .container .wrapper .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .event .container .wrapper .card .thumb, .e-contents .container .wrapper .card .thumb {
+    width: 100%;
+  }
+  .event .container .wrapper .card .thumb img, .e-contents .container .wrapper .card .thumb img {
+    min-width: 100%;
+    height: 200px;
+  }
+}
 /* shop */
 .shop .wrapper .card .thumb {
   position: relative;
@@ -376,6 +442,15 @@ header .container #global ul li a span {
   text-align: center;
 }
 
+/* 画面幅768px以下 */
+@media (max-width: 1000px) {
+  .category-labels {
+    flex-wrap: wrap;
+  }
+  .category-labels span {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
 /* event */
 .event .container .wrapper .card {
   border: none;
@@ -416,6 +491,12 @@ section.bg .container {
   z-index: 100;
 }
 
+/* 画面幅768px以下 */
+@media (max-width: 1000px) {
+  .ng-margin {
+    margin-top: -350px;
+  }
+}
 /* footer */
 footer {
   background: #000;
@@ -425,55 +506,63 @@ footer {
 }
 
 /*縦メニュー*/
-.division {
-  display: flex;
-  max-width: 1024px;
-  margin: 0 auto;
+@media (max-width: 1000px) {
+  .division {
+    display: flex;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  .division header .container {
+    min-width: 250px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+  .division header .container .logo {
+    width: 100%;
+    text-align: center;
+  }
+  .division header .container #global {
+    align-items: flex-start;
+    gap: 50px;
+  }
+  .division header .container #global .sns {
+    order: 3;
+  }
+  .division header .container #global ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  .division header .container #global ul li a {
+    padding: 0;
+    align-items: flex-start;
+  }
+  .division header .container #global ul li a::before {
+    content: none;
+  }
+  .division main {
+    flex: 1;
+    min-width: 0;
+  }
+  .division main .concept {
+    margin-top: -300px;
+    width: 90%;
+  }
+  .division main section {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .division main section.bg .container {
+    width: 90%;
+  }
 }
-.division header .container {
-  min-width: 250px;
-  flex-direction: column;
-  align-items: center;
-  gap: 50px;
+/* 画面幅768px以下 */
+@media (max-width: 1000px) {
+  .ng-margin {
+    margin-top: -350px;
+  }
 }
-.division header .container .logo {
-  width: 100%;
-}
-.division header .container #global {
-  align-items: flex-start;
-  gap: 50px;
-}
-.division header .container #global .sns {
-  order: 3;
-}
-.division header .container #global ul {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 30px;
-}
-.division header .container #global ul li a {
-  padding: 0;
-  align-items: flex-start;
-}
-.division header .container #global ul li a::before {
-  content: none;
-}
-.division main {
-  flex: 1;
-  min-width: 0;
-}
-.division main .concept {
-  margin-top: -300px;
-  width: 90%;
-}
-.division main section {
-  max-width: 100%;
-  margin: 0 auto;
-}
-.division main section.bg .container {
-  width: 90%;
-}
-
 /* post */
 .content h1 {
   text-align: center;
