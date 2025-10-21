@@ -1,5 +1,5 @@
 # custom-wp-theme-api
-A custom WordPress theme with WP REST API integration and featured recommendations. （WP REST APIを活用し、おすすめ記事機能を搭載したカスタムWordPressテーマです。）
+A custom WordPress theme with WP REST API integration and featured recommendations. （WP REST APIを活用し、おすすめ記事を表示する機能を搭載したWordPressのテーマです。）
 
 ### オリジナルテーマの配置場所
 app/public/wp-content/themes/practice
